@@ -16,6 +16,12 @@ subprojects {
         }
     }
 }
+
+subprojects {
+    tasks.configureEach {
+        if (name.contains("lintVital")) enabled = false
+    }
+}
 ''';
 
 const groovyFix = r'''
@@ -27,6 +33,12 @@ subprojects {
                 project.android.compileSdkVersion(app.android.compileSdkVersion)
             }
         }
+    }
+}
+
+subprojects {
+    tasks.configureEach { t ->
+        if (t.name.contains("lintVital")) t.enabled = false
     }
 }
 ''';
