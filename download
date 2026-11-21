@@ -1,0 +1,11 @@
+build/
+.dart_tool/
+android/
+windows/
+ios/
+macos/
+linux/
+web/
+.metadata
+.flutter-plugins*
+pubspec.lock
